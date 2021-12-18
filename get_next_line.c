@@ -142,6 +142,7 @@ char *get_next_line(int fd)
 			return (line);
 		else if (read_bytes == 0)
 		{
+			free(line);
 			return (NULL);
 		}
 		nl = find_nl(buffer);
